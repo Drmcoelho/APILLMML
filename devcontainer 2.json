@@ -1,0 +1,11 @@
+{
+    "name": "Integrated GitHub Desktop, Codespaces, Copilot, and gcloud CLI",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:debian",
+    "postCreateCommand": "./setup.sh",
+    "extensions": [
+        "GitHub.copilot"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Ambiente Integrado (GitHub Desktop, Codespaces, Copilot, gcloud, Git, etc)",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:debian",
+    // Define o usuário remoto para facilitar integrações e permissões
+    "remoteUser": "vscode",
+    // Comando executado após a criação do container para instalar dependências adicionadas
+    "postCreateCommand": "apt-get update && apt-get install -y git curl apt-transport-https ca-certificates gnupg && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add - && echo 'deb https://packages.cloud.google.com/apt cloud-sdk main' | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && apt-get update && apt-get install -y google-cloud-sdk",
+    // Extensões recomendadas para integração com Codespaces, Git e Copilot
+    "extensions": [
+        "GitHub.copilot",
+        "ms-vscode.remote-repositories",
+        "eamodio.gitlens"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash",
+        // Configura o git para facilitar o trabalho com VSC e Codespaces
+        "git.autofetch": true,
+        "git.enableSmartCommit": true
+    },
+    // Variáveis de ambiente podem ser usadas para integrações específicas e customizações
+    "containerEnv": {
+        "CODESPACES": "true"
+    }
+}
